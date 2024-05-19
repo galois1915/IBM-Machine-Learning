@@ -13,19 +13,18 @@ Artificial intelligence and machine learning started much earlier, but in recent
 Access to safe drinking-water is essential to health, a basic human right and a component of effective policy for health protection. This is important as a health and development issue at a national, regional and local level. In some regions, it has been shown that investments in water supply and sanitation can yield a net economic benefit, since the reductions in adverse health effects and health care costs outweigh the costs of undertaking the interventions.
 [The water_potability.csv file contains water quality metrics for 3276 different water bodies.](https://www.kaggle.com/datasets/adityakadiwal/water-potability)
 
-About this file:
+**Hypothesis**:
+* Null hypothesis (H0): There is no difference in the mean of a numerical variable (for example, pH, hardness, TDS, etc.) between drinking water and non-potable water.
+* Alternative hypothesis (H1): There is a difference in the mean of the numerical variable between drinking water and non-drinking water.
 
-0. ppm: parts per million; μg/L: microgram per litre; mg/L: milligram per litre
-1. ph: pH of 1. water (0 to 14).
-2. Hardness: Capacity of water to precipitate soap in mg/L.
-3. Solids: Total dissolved solids in ppm.
-4. Chloramines: Amount of Chloramines in ppm.
-5. Sulfate: Amount of Sulfates dissolved in mg/L.
-6. Conductivity: Electrical conductivity of water in μS/cm.
-7. Organic_carbon: Amount of organic carbon in ppm.
-8. Trihalomethanes: Amount of Trihalomethanes in μg/L.
-9. Turbidity: Measure of light emiting property of water in NTU.
-10. Potability: Indicates if water is safe for human consumption. Potable -1 and Not potable -0
+**Conclusion**: Based on the p-value results, the key factors affecting water potability are:
+
+1. **H**: Critical for maintaining water safety.
+2. **Chloramines**: Essential for proper disinfection but harmful at high levels.
+3. **Organic Carbon**: Indicates the presence of natural organic matter, potentially harmful.
+4. **Turbidity**: High levels indicate suspended particles and microorganisms.
+
+Other factors like Hardness, Solids, Sulfate, Conductivity, and Trihalomethanes are not statistically significant in determining potability. Focus on controlling pH, chloramines, organic carbon, and turbidity to ensure safe drinking water.
 
 ## Course 2:
 ## Course 3:
