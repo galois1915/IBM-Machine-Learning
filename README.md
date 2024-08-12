@@ -27,7 +27,8 @@ Access to safe drinking-water is essential to health, a basic human right and a 
 Other factors like Hardness, Solids, Sulfate, Conductivity, and Trihalomethanes are not statistically significant in determining potability. Focus on controlling pH, chloramines, organic carbon, and turbidity to ensure safe drinking water.
 
 ## Course 2:
-## Course 3:
+## Course 3: Supervised Machine Learning - Classification
+
 ## Course 4:
 ## Course 5: Deep Learning and Reinforcement Learning
 ## Course 6:
