@@ -29,6 +29,12 @@ Other factors like Hardness, Solids, Sulfate, Conductivity, and Trihalomethanes 
 ## Course 2:
 ## Course 3: Supervised Machine Learning - Classification
 
+<p float="left">
+  <img src="./Supervised-Classification/project/images/crop_prediction.png" width="200" />
+  <img src="./Supervised-Classification/project/images/feature_importance.png" width="200" /> 
+  <img src="./Supervised-Classification/project/images/confusion_matrix.png" width="200" />
+</p>
+
 ## Course 4:
 ## Course 5: Deep Learning and Reinforcement Learning
 ## Course 6:
