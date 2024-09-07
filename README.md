@@ -51,6 +51,14 @@ You can see the project by clicking on this [link](https://github.com/galois1915
   <img src="./Supervised-Classification/project/images/confusion_matrix.png" width="200" />
 </p>
 
-## Course 4:
+## Course 4: Unsupervised Machine Learning
+
+* Introduction to Unsupervised Learning and K Means
+* Distace Metrics and Computational Hurdles
+* Selecting a Clustering Algorithm
+* Dimensionality reduction
+* Nonlinear and Distance-Based Dimentionality Reduction
+* Matrix Factorization
+
 ## Course 5: Deep Learning and Reinforcement Learning
 ## Course 6:

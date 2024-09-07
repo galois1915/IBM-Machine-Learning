@@ -1,2 +1,4 @@
 .env
 data/Human_Activity_Recognition_Using_Smartphones_Data.csv
+Unsupervised-MachineLearning/project/data_copy.csv
+Unsupervised-MachineLearning/project/data_pca.csv
