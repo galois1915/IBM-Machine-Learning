@@ -29,30 +29,39 @@ Other factors like Hardness, Solids, Sulfate, Conductivity, and Trihalomethanes 
 
 ## Course 2:
 ## Course 3: Supervised Machine Learning - Classification
+
+This course introduces you to one of the main types of modeling families of supervised Machine Learning: Classification. You will learn how to train predictive models to classify categorical outcomes and how to use error metrics to compare across different models. The hands-on section of this course focuses on using best practices for classification, including train and test splits, and handling data sets with unbalanced classes.
+
+* Logistic Regression
+* K Nearest Neighbors
+* Support Vetor Machines
+* Decision Trees
+* Ensemble models
+* Modeling Unbalanced Classes
+
+
 Classification algorithms in machine learning categorize data into distinct classes. Here's a breakdown:
-- **Logistic Regression** predicts the probability of binary outcomes, useful for cases where the response variable has two categories.
-- **K-Nearest Neighbors (KNN)** classifies data by assigning it to the class most common among its k-nearest neighbors in the feature space.
-- **Support Vector Classifier (SVC)** constructs a hyperplane that maximizes the margin between two classes, effectively finding the best boundary for classification.
-- **Decision Trees** split data based on feature values, creating a tree-like structure where each node represents a decision rule and each branch represents an outcome.
-- **Ensemble Models**:
-  - **Random Forest** builds multiple decision trees and averages their predictions, improving accuracy and reducing overfitting.
-  - **Bagging** (e.g., Random Forest) involves training multiple models on different subsets of the data and averaging their predictions.
-  - **Boosting** (e.g., AdaBoost) trains models sequentially, with each model correcting errors made by the previous ones, thereby improving performance.
-  - **Stacking** combines predictions from multiple models, usually different types, to form a final prediction, leveraging the strengths of each model.
-- **Modeling Unbalanced Classes** involves techniques to handle situations where some classes are underrepresented, ensuring that the model performs well across all classes.
+1. **Logistic Regression** predicts the probability of binary outcomes, useful for cases where the response variable has two categories.
+2. **K-Nearest Neighbors (KNN)** classifies data by assigning it to the class most common among its k-nearest neighbors in the feature space.
+3. **Support Vector Classifier (SVC)** constructs a hyperplane that maximizes the margin between two classes, effectively finding the best boundary for classification.
+4. **Decision Trees** split data based on feature values, creating a tree-like structure where each node represents a decision rule and each branch represents an outcome.
+5. **Ensemble Models**:
+    - **Random Forest** builds multiple decision trees and averages their predictions, improving accuracy and reducing overfitting.
+    - **Bagging** (e.g., Random Forest) involves training multiple models on different subsets of the data and averaging their predictions.
+    - **Boosting** (e.g., AdaBoost) trains models sequentially, with each model correcting errors made by the previous ones, thereby improving performance.
+    - **Stacking** combines predictions from multiple models, usually different types, to form a final prediction, leveraging the strengths of each model.
+6. **Modeling Unbalanced Classes** involves techniques to handle situations where some classes are underrepresented, ensuring that the model performs well across all classes.
 
 ### Project: Crop prediction
 In agriculture, the precise recommendation of crops is pivotal in ensuring optimal yield and sustainability. As farmers and agricultural experts delve deeper into data-driven approaches, the significance of leveraging comprehensive datasets, particularly those about soil composition, becomes increasingly evident. [The dataset under consideration embodies a wealth of information encompassing key factors such as Nitrogen, Phosphorus, and Potassium levels, alongside environmental variables like Temperature, Humidity, pH_Value, and Rainfall](https://www.kaggle.com/datasets/varshitanalluri/crop-recommendation-dataset). Understanding and analyzing this dataset is fundamental to making informed decisions that may enhance agricultural productivity, resource management, and overall crop health.
 
-You can see the project by clicking on this [link](https://github.com/galois1915/IBM-Machine-Learning/tree/main/Supervised-Classification/project).
-
-<object data="https://github.com/galois1915/IBM-Machine-Learning/blob/main/Unsupervised-MachineLearning/Coursera%20SNF21KSR53L5.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/galois1915/IBM-Machine-Learning/blob/main/Unsupervised-MachineLearning/Coursera%20SNF21KSR53L5.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/galois1915/IBM-Machine-Learning/blob/main/Unsupervised-MachineLearning/Coursera%20SNF21KSR53L5.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+You can see the project by clicking on this [link](https://github.com/galois1915/IBM-Machine-Learning/blob/main/Supervised-Classification/project/report.md).
+<p style="text-align: center;">
+  <img src="./Supervised-Classification/Coursera XXC6S3CYL7SQ-1.png" width="500" />
+</p>
 
 ## Course 4: Unsupervised Machine Learning
+This course introduces you to one of the main types of Machine Learning: Unsupervised Learning. You will learn how to find insights from data sets that do not have a target or labeled variable. You will learn several clustering and dimension reduction algorithms for unsupervised learning as well as how to select the algorithm that best suits your data. The hands-on section of this course focuses on using best practices for unsupervised learning.
 
 * Introduction to Unsupervised Learning and K Means
 * Distace Metrics and Computational Hurdles
@@ -60,6 +69,30 @@ You can see the project by clicking on this [link](https://github.com/galois1915
 * Dimensionality reduction
 * Nonlinear and Distance-Based Dimentionality Reduction
 * Matrix Factorization
+
+You will learn about several models and techniques. Here is a summary of the models covered in the course:
+
+1. **K-means Clustering**: This model is used to partition data into clusters based on similarity. It aims to minimize the distance between data points within each cluster and maximize the distance between different clusters.
+
+2. **Hierarchical Clustering**: This model builds a hierarchy of clusters by iteratively merging or splitting clusters based on their similarity. It can be agglomerative (bottom-up) or divisive (top-down).
+
+3. **Density-Based Spatial Clustering of Applications with Noise** (DBSCAN): This model groups together data points that are close to each other and separates outliers. It does not require specifying the number of clusters in advance.
+
+4. **Principal Component Analysis** (PCA): This technique is used for dimensionality reduction. It transforms high-dimensional data into a lower-dimensional space while preserving the most important information.
+
+5. **Kernel PCA**: This is an extension of PCA that uses kernel functions to handle non-linear relationships in the data. It can capture complex patterns and structures that PCA may miss.
+
+6. **Manifold Learning**: This technique aims to learn the underlying structure of high-dimensional data and represent it in a lower-dimensional space. It includes methods like **Multidimensional Scaling** (MDS) and **t-SNE**.
+
+7. **Matrix Factorization**: This technique decomposes a matrix into multiple matrices to discover latent factors or features. It is commonly used in recommendation systems and collaborative filtering.
+
+### Project: Soil Clustering
+The dataset contains 7 columns. The first column contains names of different districts of country, India. And the rest of the columns contain the information about the Percent Composition of various minerals like Iron, Zinc, Copper, etc ([Nutrient Composition of Soil in different District](https://www.kaggle.com/datasets/ashishkumarak/soil-dataset)). The objetive is to group farms or crop types based on similarities in factors such as Area, Production, Annual Rainfall, Fertilizer usage, Pesticide usage, and Yield.
+
+You can see the project by clicking on this [link](https://github.com/galois1915/IBM-Machine-Learning/blob/main/Unsupervised-MachineLearning/project/report.md).
+<p style="text-align: center;">
+  <img src="./Unsupervised-MachineLearning/Coursera SNF21KSR53L5-1.png" width="500" />
+</p>
 
 ## Course 5: Deep Learning and Reinforcement Learning
 ## Course 6:
