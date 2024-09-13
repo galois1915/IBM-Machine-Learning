@@ -46,9 +46,9 @@ In agriculture, the precise recommendation of crops is pivotal in ensuring optim
 
 You can see the project by clicking on this [link](https://github.com/galois1915/IBM-Machine-Learning/tree/main/Supervised-Classification/project).
 
-<object data="http://yoursite.com/the.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="http://yoursite.com/the.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+<object data="https://github.com/galois1915/IBM-Machine-Learning/blob/main/Unsupervised-MachineLearning/Coursera%20SNF21KSR53L5.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/galois1915/IBM-Machine-Learning/blob/main/Unsupervised-MachineLearning/Coursera%20SNF21KSR53L5.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/galois1915/IBM-Machine-Learning/blob/main/Unsupervised-MachineLearning/Coursera%20SNF21KSR53L5.pdf">Download PDF</a>.</p>
     </embed>
 </object>
 
