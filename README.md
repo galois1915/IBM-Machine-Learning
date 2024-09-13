@@ -45,11 +45,12 @@ Classification algorithms in machine learning categorize data into distinct clas
 In agriculture, the precise recommendation of crops is pivotal in ensuring optimal yield and sustainability. As farmers and agricultural experts delve deeper into data-driven approaches, the significance of leveraging comprehensive datasets, particularly those about soil composition, becomes increasingly evident. [The dataset under consideration embodies a wealth of information encompassing key factors such as Nitrogen, Phosphorus, and Potassium levels, alongside environmental variables like Temperature, Humidity, pH_Value, and Rainfall](https://www.kaggle.com/datasets/varshitanalluri/crop-recommendation-dataset). Understanding and analyzing this dataset is fundamental to making informed decisions that may enhance agricultural productivity, resource management, and overall crop health.
 
 You can see the project by clicking on this [link](https://github.com/galois1915/IBM-Machine-Learning/tree/main/Supervised-Classification/project).
-<p style="text-align: center;">
-  <img src="./Supervised-Classification/project/images/crop_prediction.png" width="200" />
-  <img src="./Supervised-Classification/project/images/feature_importance.png" width="200" /> 
-  <img src="./Supervised-Classification/project/images/confusion_matrix.png" width="200" />
-</p>
+
+<object data="http://yoursite.com/the.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="http://yoursite.com/the.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
 
 ## Course 4: Unsupervised Machine Learning
 
