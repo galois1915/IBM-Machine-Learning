@@ -127,8 +127,51 @@ While Gensim's primary focus lies in more advanced NLP tasks like topic modeling
 > [Link to the notebook to see the BoW process](https://github.com/galois1915/IBM-Machine-Learning/blob/main/MachineLearning-Capstone/Text-Analysis.ipynb)
 
 ### Stopwords and WordCloud
+
+#### What are Stopwords?
+Stopwords are common words in natural language, such as articles, conjunctions, and prepositions. They are often filtered out during text processing because they lack significant meaning on their own.
+The significance of stopwords in text analysis can be elucidated through several key points:
+
+- noise reduction
+- Improve computational efficiency
+- Enhance accuracy
+- Facilitation of meaningful insights:
+- Improved natural language processing
+- Language independence
+- Customization and flexibility
+
+#### What is NLTK?
+Natural Language Toolkit (NLTK) is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning. Key points about NLTK:
+
+- Comprehensive toolkit
+- Open-source
+- Community support
+- Ease of use
+- Rich resource collection
+
+#### Exploring Wordcloud generation
+Word cloud generation is a visualization technique used to represent textual data in a visually appealing and intuitive manner. In a word cloud, words from a given text are displayed in different sizes and colors, with more frequent words appearing larger and more prominent while less frequent words are smaller and less prominent. Word clouds are commonly used to identify patterns, trends, and key themes within a corpus of text data.
+
+Choosing and applying frequency and weights to create word clouds:
+- Tokenization
+- Frequency calculation
+- Weight assignment
+    - Linear scaling
+    - Logarithmic scaling
+    - TF-IDF 
+- Visualization
+
 ### Exploratory Data Analysis on Online Course Enrollment Data
+* Identify keywords in course titles using a **WordCloud**
+* Calculate the summary statistics and visualizations of the online course content dataset
+* Determine **popular course genres**
+* Calculate the summary statistics and create visualizations of the online course **enrollment** dataset
+* Identify courses with the greatest number of enrolled students
+
+> [Link of the notebook]()
+
 ### Extract Bag of Words (BoW) Features from Course Textual Content
+
 ### Sparse and Dense Bag of Words (BOW) Vectors
 ### Similarity Measures in Recommender Systems
 ### Calculate Course Similarity using BoW Features
