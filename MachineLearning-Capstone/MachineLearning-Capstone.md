@@ -124,7 +124,14 @@ While Gensim's primary focus lies in more advanced NLP tasks like topic modeling
 - <code>gensim.corpora.dictionary.Dictionary(documents=None)</code>
 - <code>gensim.corpora.Dictionary.doc2bow(document)</code>
 
-> Link to the notebook to see the BoW process
+> [Link to the notebook to see the BoW process](https://github.com/galois1915/IBM-Machine-Learning/blob/main/MachineLearning-Capstone/Text-Analysis.ipynb)
+
+### Stopwords and WordCloud
+### Exploratory Data Analysis on Online Course Enrollment Data
+### Extract Bag of Words (BoW) Features from Course Textual Content
+### Sparse and Dense Bag of Words (BOW) Vectors
+### Similarity Measures in Recommender Systems
+### Calculate Course Similarity using BoW Features
 
 ## Module 2: Unsupervised-Learning Based Recommender System
 ## Module 3: Supervised-Learning Based Recommender System
