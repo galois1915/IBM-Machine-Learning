@@ -1,4 +1,6 @@
 # IBM-Machine-Learning
+Enviroment:
+- Python3.10
 
 ## Course 1: Exploratory Data Analysis for Machine Learning
 
@@ -95,4 +97,4 @@ You can see the project by clicking on this [link](https://github.com/galois1915
 </p>
 
 ## Course 5: Deep Learning and Reinforcement Learning
-## Course 6:
+## Course 6: Machine Learning Capstone

@@ -67,7 +67,7 @@ Now let's apply the Text Analysis techniques given below to solve this use case:
 1. Tokenization: Tokenization involves breaking down text into smaller units, typically words or phrases known as tokens, to facilitate subsequent analysis. This helps standardize the text data and facilitates subsequent processing steps.
 2. Stopword Removal: Stopwords are common words like the, and, is, and so on, that occur frequently in text but typically do not convey significant meaning. Removing stopwords can help reduce noise and improve the quality of analysis results.
 3. Stemming and Lemmatization: Stemming and lemmatization are techniques used to normalize words by reducing them to their base or root forms. This helps in collapsing variations of words to a common form, thereby reducing vocabulary size and improving analysis accuracy.
-4. Word Frequency Analysis: Word frequency analysis comprises the process of counting the occurrences of individual words within a document or corpus.
+4. Word Frequency Analysis: Word frequency analysis comprises the process of counting the occurrences of individual words within a document or **corpus**.
 5. Sentiment Analysis: Sentiment analysis is used to determine the sentiment expressed in text, such as positive, negative, or neutral. This technique is widely used for tasks like brand monitoring, customer feedback analysis, and social media sentiment analysis.
 6. Named Entity Recognition (NER): NER is the process of identifying and categorizing named entities such as people, organizations, locations, dates, etc., mentioned in text. This technique is valuable for tasks like information retrieval, data extraction, and entity linking.
 7. Topic Modeling: Topic modeling is a statistical technique used to identify latent topics or themes within a collection of documents. It helps in organizing and summarizing large volumes of text data and can be used for tasks like content recommendation, trend analysis, and document clustering.
@@ -100,18 +100,31 @@ The Bag of Words (BoW) model is widely used in text analysis to convert unstruct
 Key Concepts of Bag of Words (BoW):
 Text Representation: BoW treats a document as a collection of words, disregarding grammar, word order, and even sentence structure. It focuses solely on the words present in the text and their frequency.
 
-- Tokenization: This is the first step in the BoW approach, where the text is broken down into individual words or "tokens." Common punctuation is removed, and words are typically converted to lowercase for consistency. For example, the text "The camera is great" becomes ["the", "camera", "is", "great"].
+- **Tokenization**: This is the first step in the BoW approach, where the text is broken down into individual words or "tokens." Common punctuation is removed, and words are typically converted to lowercase for consistency. For example, the text "The camera is great" becomes ["the", "camera", "is", "great"].
 
-- Vocabulary Creation: A unique vocabulary is created, which consists of all the distinct words found in the corpus (collection of documents). This vocabulary serves as the basis for constructing feature vectors for each document.
+- **Vocabulary Creation**: A unique vocabulary is created, which consists of all the distinct words found in the corpus (collection of documents). This vocabulary serves as the basis for constructing feature vectors for each document.
 
-- Vectorization: Each document is then represented as a vector based on the vocabulary. There are two common types of vectorization in BoW:
-
-- Binary Vectorization: This method represents each document as a binary vector, where each element is either 1 (word present) or 0 (word absent).
-- Frequency Vectorization: Instead of binary values, this method uses the frequency of each word in the document, representing how often a word appears in that text.
-- TF-IDF (Term Frequency-Inverse Document Frequency): BoW can be extended using TF-IDF, which not only considers word frequency within a document (TF) but also adjusts for how common the word is across the entire corpus (IDF). This helps prioritize rare but meaningful words over frequently used, less informative ones (like "the" or "is").
+- **Vectorization**: Each document is then represented as a vector based on the vocabulary. There are two common types of vectorization in BoW:
+  - Binary Vectorization: This method represents each document as a binary vector, where each element is either 1 (word present) or 0 (word absent).
+  - Frequency Vectorization: Instead of binary values, this method uses the frequency of each word in the document, representing how often a word appears in that text.
+  - TF-IDF (Term Frequency-Inverse Document Frequency): BoW can be extended using TF-IDF, which not only considers word frequency within a document (TF) but also adjusts for how common the word is across the entire corpus (IDF). This helps prioritize rare but meaningful words over frequently used, less informative ones (like "the" or "is").
 
 #### Exploring Python libraries specialized in text analysis, such as NLTK and Gensim
+**NLTK**: The NLTK library, an abbreviation for Natural Language Toolkit, is a robust open-source Python library utilized for natural language processing (NLP) endeavors.
 
+It furnishes an array of tools and resources for diverse NLP tasks, encompassing tokenization, stemming, lemmatization, part-of-speech tagging, named entity recognition, parsing, and beyond.
+
+- <code>nltk.tokenize.word_tokenize(text, language='english', preserve_line=False)</code>
+- <code>nltk.corpus.stopwords.words(languagename)</code>
+
+**Genism**: The genism library, primarily known for its robust capabilities in topic modeling and document similarity tasks, can also be utilized for Bag-of-Words (BoW) representation.
+In BoW, Gensim provides functionalities to preprocess text data, build a vocabulary, and convert documents into numerical vectors based on word occurrences.
+While Gensim's primary focus lies in more advanced NLP tasks like topic modeling, its BoW implementation can serve as a foundational step in preprocessing text data for various downstream tasks such as classification, clustering, and information retrieval.
+
+- <code>gensim.corpora.dictionary.Dictionary(documents=None)</code>
+- <code>gensim.corpora.Dictionary.doc2bow(document)</code>
+
+> Link to the notebook to see the BoW process
 
 ## Module 2: Unsupervised-Learning Based Recommender System
 ## Module 3: Supervised-Learning Based Recommender System
