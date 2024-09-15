@@ -170,7 +170,7 @@ Choosing and applying frequency and weights to create word clouds:
 
 > [Link of the notebook]()
 
-### Lab: Extract Bag of Words (BoW) Features from Course Textual Content
+### Extract Bag of Words (BoW) Features from Course Textual Content
 In this lab, you will be learning to extract the bag of words (BoW) features from course titles and descriptions. The BoW feature is a simple but effective feature characterizing textual data and is widely used in many textual machine learning tasks.
 #### Bag of Words (BoW) features  
 ```python
@@ -290,7 +290,129 @@ print(dense_bow)
 The output consists of four lists, each representing a word from the input list ["king", "queen", "man", "woman"]. Each list contains a 300-dimensional dense vector representation of the corresponding word.
 
 ### Similarity Measures in Recommender Systems
+The significance of similarity measures in recommender systems
+Similarity measures in recommender systems quantify the similarity between items or users based on various characteristics or behaviors. 
+- Content-based recommendations: These systems analyze the content of articles to recommend similar ones to users based on their reading history and preferences. Similarity measures help identify articles with similar topics or keywords, ensuring users receive suggestions aligned with their interests.
+
+- Collaborative filtering recommendations: By analyzing user interactions with articles, collaborative filtering systems identify users with similar engagement patterns and recommend popular articles. Similarity measures enable the system to gauge the similarity between users' behavior, facilitating the delivery of relevant and engaging recommendations.
+
+By leveraging these measures, platforms can:
+- Personalize recommendations
+- Enhance user engagement
+- Introduce diversity
+- Optimize recommendations.
+
+#### Different types of similarity measures
+The different types of similarity measures are:
+
+- Cosine similarity
+
+In text analysis, cosine similarity can compare documents. Each document is a vector of word frequencies. Cosine similarity measures the directions of these vectors, indicating how similar the documents are in terms of their content.
+
+- Jaccard similarity
+
+The Jaccard index is commonly used in various fields, including information retrieval, data mining, and natural language processing, to quantify the similarity between data sets or objects. It is beneficial when dealing with binary data or categorical variables.
+
+- Euclidean distance
+
+Euclidean distance is a metric commonly used to measure the similarity or dissimilarity between two points in an Euclidean space. In the context of recommender system similarity measures, Euclidean distance quantifies the distance between vectors representing items or users.
+
+#### Appropriate applications of similarity measures
+In recommender systems, Cosine similarity, Jaccard score, and Euclidean distance are widely used distance metrics suited to specific scenarios.
+
+- Cosine similarity
+
+It is used when the direction of vectors matters more than their magnitudes.
+
+Example: Recommending similar articles based on their textual content. Cosine similarity measures the angle between article vectors, effectively capturing their thematic similarity regardless of word frequency.
+
+- Jaccard score
+
+It is effective for scenarios emphasizing set similarity, particularly with binary or categorical data.
+
+Example: Collaborative filtering recommendation systems. Jaccard score measures user similarity based on item interactions, considering the presence or absence of interactions rather than their frequencies.
+
+- Euclidean distance
+
+It is suitable for scenarios with crucial absolute differences between feature values.
+
+Example: Hybrid recommendation systems combining content-based and collaborative filtering approaches. Euclidean distance can quantify similarity between users or items based on a mix of numerical and categorical features.
+
+Each metric offers unique benefits tailored to specific recommendation scenarios, ensuring efficient and effective recommendations while accommodating diverse data types and requirements.
+
 ### Calculate Course Similarity using BoW Features
+* Calculate the similarity between any two courses using BoW feature vectors
+```python
+from scipy.spatial.distance import cosine
+```
+```python
+def generate_sparse_bow(course):
+    """
+    Generate a sparse bag-of-words (BoW) representation for a given course.
+
+    Parameters:
+    course (str): The input course text to generate the BoW representation for.
+
+    Returns:
+    list: A sparse BoW representation where each element corresponds to the presence (1) or absence (0)
+    of a word in the input course text.
+    """
+
+    # Initialize an empty list to store the BoW vector
+    bow_vector = []
+
+    # Tokenize the course text by splitting it into words
+    words = course.split()
+
+    # Iterate through all unique words (tokens) in the course
+    for token in set(words):
+        # Check if the token is present in the course text
+        if token in words:
+            # If the token is present, append 1 to the BoW vector
+            bow_vector.append(1)
+        else:
+            # If the token is not present, append 0 to the BoW vector
+            bow_vector.append(0)
+
+    # Return the sparse BoW vector
+    return bow_vector
+```
+```python
+def pivot_two_bows(basedoc, comparedoc):
+    """
+    Pivot two bag-of-words (BoW) representations for comparison.
+
+    Parameters:
+    basedoc (DataFrame): DataFrame containing the bag-of-words representation for the base document.
+    comparedoc (DataFrame): DataFrame containing the bag-of-words representation for the document to compare.
+
+    Returns:
+    DataFrame: A DataFrame with pivoted BoW representations for the base and compared documents,
+    facilitating direct comparison of word occurrences between the two documents.
+    """
+
+    # Create copies of the input DataFrames to avoid modifying the originals
+    base = basedoc.copy()
+    base['type'] = 'base'  # Add a 'type' column indicating base document
+    compare = comparedoc.copy()
+    compare['type'] = 'compare'  # Add a 'type' column indicating compared document
+
+    # Concatenate the two DataFrames vertically
+    join = pd.concat([base, compare])
+
+    # Pivot the concatenated DataFrame based on 'doc_id' and 'type', with words as columns
+    joinT = join.pivot(index=['doc_id', 'type'], columns='token').fillna(0).reset_index(level=[0, 1])
+
+    # Assign meaningful column names to the pivoted DataFrame
+    joinT.columns = ['doc_id', 'type'] + [t[1] for t in joinT.columns][2:]
+
+    # Return the pivoted DataFrame for comparison
+    return joinT
+```
+
+```python
+similarity = 1 - cosine(bow_vectors.iloc[0, 2:], bow_vectors.iloc[1, 2:])
+```
 
 ## Module 2: Unsupervised-Learning Based Recommender System
 ## Module 3: Supervised-Learning Based Recommender System
