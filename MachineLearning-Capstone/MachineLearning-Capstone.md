@@ -3,10 +3,10 @@
 ## Module 1: Machine Learning Capstone Overview
 In this module, you will be introduced to the idea of recommender systems. All labs in subsequent modules are based on this concept. You will also be provided with an overview of the capstone project. You will perform exploratory data analysis to find preliminary insights such as data patterns. You will also use it to check assumptions with the help of summary statistics and graphical representations of online course-related data sets such as course titles, course genres, and course enrollments. Next, you will extract a word-count vector called a “bag of words” (BoW) from course titles and descriptions. The BoW feature is probably the simplest but most effective feature characterizing textual data. It is widely used in many textual machine learning tasks. Finally, you will apply the cosine similarity measurement to calculate the course similarity using the extracted BoW feature vectors.
 Learning Objectives
-Describe what a recommender system does
-Develop an exploratory data analysis on course enrollment data
-Write code to count the frequencies of words (bag of words) in a set of course titles
-Calculate the cosine similarity between two vectors
+- Describe what a recommender system does
+- Develop an exploratory data analysis on course enrollment data
+- Write code to count the frequencies of words (bag of words) in a set of course titles
+- Calculate the cosine similarity between two vectors
 
 ### Introduction to Machine Learning Capstone
 In the Machine Learning Capstone Project, you will have the opportunity to apply the machine learning knowledge and skills you acquired from previous courses. The project focuses on recommender systems, which are fundamental to many successful machine learning systems such as social network mining and advertising prediction. You will be asked to apply a wide range of machine learning algorithms such as regression, classification, and clustering to predict if a user will like an item or not. By completing this project, you will showcase your comprehensive machine learning skills to your peers. This capstone course will be a valuable asset to your machine learning portfolio.
@@ -415,6 +415,32 @@ similarity = 1 - cosine(bow_vectors.iloc[0, 2:], bow_vectors.iloc[1, 2:])
 ```
 
 ## Module 2: Unsupervised-Learning Based Recommender System
+
+In this module, you will create three course recommendation systems using different methods. In lab 1, you will create a course recommendation system **based on user profile and course genre matrices** by computing an interest score for each course and recommend the courses with the highest interest scores. In the second lab, you will generate a **course similarity matrix** to create the recommendation system. In the third lab, you will implement a clustering-based recommender system algorithm using K-means clustering and principal component analysis based on **group members’ course enrollment history**. In labs four and five you will use **collaborative filtering** to make predictions about a user’s interest based on a collection of other users’ similar preferences. In lab 4, you will perform KNN-based collaborative filtering and in lab 5, you will use **non-negative matrix factorization.**
+Learning Objectives
+- Apply K-means clustering using feature vectors
+- Apply principal component analysis (PCA) on feature vectors to reduce dimensions
+- Generate course recommendations based on other group members’ enrollment history
+- Calculate the similarity between courses from a similarity matrix
+- Create a course recommender system using user profiles, already enrolled courses, and course genres
+- Apply KNN-based collaborative filtering on a user-item interaction matrix
+- Apply non-negative matrix factorization collaborative filtering on a user-item interaction matrix
+
 ## Module 3: Supervised-Learning Based Recommender System
+In this module, you will **predict course ratings** using neural networks. In the first lab, you will train neural networks to predict course ratings while simultaneously extracting users' and items' latent features. In lab 2, you will be given course interaction feature vectors as input data. Using regression analysis, you will calculate numerical rating scores that predict whether a student will audit or complete a course. Lab 3 is similar to lab 2 but instead of using regression you will use a classification model. You will extract user and item embedding feature vectors from a neural network. With those embedding feature vectors, you will create an interaction feature vector and use that to build a classification model. The model maps the interaction feature vector to a rating mode that predicts whether a learner will audit or complete a course.
+Learning Objectives
+Train a neural network to extract user and item latent features from hidden layers
+Predict course ratings with trained neural networks
+Construct regression and classification models to predict ratings using combined embedding vectors
+
 ## Module 4: Share and Present Your Recomender Systems
+In this module, you will review guidelines and best practices for creating successful reports. As well you may wish to review instructions on creating PowerPoint presentations and how to save a PowerPoint as a PDF.
+Learning Objectives
+Identify elements of a successful data findings report
+Describe best practices for presenting your findings
+
 ## Module 5: Final Submission
+In this final module, you will be introduced to Streamlit and have the opportunity to build a Streamlit app to showcase your work in previous modules. You will complete your submission of screenshots from the hands-on labs for your peers to review. Once you have completed your submission you will then review the submission of one of your peers and grade their submission.
+Learning Objectives
+- Share the PowerPoint with your peers
+- Create a comprehensive PowerPoint presentation to demonstrate what you have done in this capstone project
