@@ -170,9 +170,125 @@ Choosing and applying frequency and weights to create word clouds:
 
 > [Link of the notebook]()
 
-### Extract Bag of Words (BoW) Features from Course Textual Content
+### Lab: Extract Bag of Words (BoW) Features from Course Textual Content
+In this lab, you will be learning to extract the bag of words (BoW) features from course titles and descriptions. The BoW feature is a simple but effective feature characterizing textual data and is widely used in many textual machine learning tasks.
+#### Bag of Words (BoW) features  
+```python
+# Tokenize the two courses
+tokenized_courses = [word_tokenize(course) for course in courses]
+# Create a token dictionary for the two courses
+tokens_dict = gensim.corpora.Dictionary(tokenized_courses)
+tokens_dict.token2id
+# Generate BoW features for each course
+courses_bow = [tokens_dict.doc2bow(course) for course in tokenized_courses]
+```
+```python
+# Enumerate through each course and its bag-of-words representation
+for course_idx, course_bow in enumerate(courses_bow):
+    # Print the index of the current course and a label
+    print(f"Bag of words for course {course_idx}:")
+    # For each token index, print its bow value (word count)
+    for token_index, token_bow in course_bow:
+        # Retrieve the token from the tokens dictionary based on its index
+        token = tokens_dict.get(token_index)
+        # Print the token and its bag-of-words value
+        print(f"--Token: '{token}', Count:{token_bow}")
+```
+
+#### BoW Dimension Reduction
+```python
+# StopWord
+stop_words = set(stopwords.words('english'))
+processed_tokens = [w for w in tokenized_courses[0] if not w.lower() in stop_words]
+# PartofSpeech
+tags = nltk.pos_tag(tokenized_courses[0])
+```
+
+
+#### Extract BoW features for course textual content and build a dataset
+```python
+def tokenize_course(course, keep_only_nouns=True):
+    # Get English stop words
+    stop_words = set(stopwords.words('english'))
+    # Tokenize the course text
+    word_tokens = word_tokenize(course)
+    # Remove English stop words and numbers
+    word_tokens = [w for w in word_tokens if (not w.lower() in stop_words) and (not w.isnumeric())]
+    # Only keep nouns 
+    if keep_only_nouns:
+        # Define a filter list of non-noun POS tags
+        filter_list = ['WDT', 'WP', 'WRB', 'FW', 'IN', 'JJR', 'JJS', 'MD', 'PDT', 'POS', 'PRP', 'RB', 'RBR', 'RBS',
+                       'RP']
+        # Tag the word tokens with POS tags
+        tags = nltk.pos_tag(word_tokens)
+        # Filter out non-nouns based on POS tags
+        word_tokens = [word for word, pos in tags if pos not in filter_list]
+
+    return word_tokens
+```
+
+#### Other popular textual features
+- **tf-idf**: tf-idf refers to Term Frequency–Inverse Document Frequency. Similar to BoW, the tf-idf also counts the word frequencies in each document. Furthermore, tf-idf will  offset the number of documents in the corpus that contain the word in order to adjust for the fact that some words appear more frequently in general. The higher the tf-idf normally means the greater the importance the word/token is.
+- **Text embedding vector**. Embedding means projecting an object into a latent feature space. We normally employ neural networks or deep neural networks to learn the latent features of a textual object such as a word, a sentence, or the entire document. The learned latent feature vectors will be used to represent the original textual entities. 
+
 
 ### Sparse and Dense Bag of Words (BOW) Vectors
+#### Sparse vs. Dense BOW Vectors
+BOW vectors can be represented in two main forms: Sparse and Dense.
+
+- **Sparse BOW Vectors**: In a Sparse representation, each document's vector is typically large and contains mostly zeros. *Each dimension corresponds to a unique word in the entire corpus, and the value represents the frequency of that word in the document*. Sparse vectors are memory-efficient but may pose computational challenges due to their high dimensionality.
+
+- **Dense BOW Vectors**: Dense representations aim to address the high dimensionality of Sparse vectors by mapping words to a lower-dimensional continuous space, typically through techniques like **Word Embeddings**. In Dense vectors, each dimension carries continuous values, making them more computationally efficient but potentially requiring more memory. Dense vectors capture semantic relationships between words and can encode more information within fewer dimensions compared to Sparse vectors.
+
+#### Applications of Sparse and Dense BOW Vectors
+Sparse BOW Vectors
+1. Text Classification: Sparse BOW vectors are widely used in text classification tasks like sentiment analysis, spam detection, and topic categorization. They provide a concise representation of textual data, allowing machine learning algorithms to efficiently classify documents into predefined categories.
+
+2. Information Retrieval: Sparse BOW vectors are instrumental in information retrieval systems where documents need to be ranked based on their relevance to a given query. By representing documents as sparse vectors, search engines can quickly identify relevant documents that contain words similar to the query terms.
+
+3. Document Clustering: Sparse BOW vectors facilitate document clustering where documents are grouped into clusters based on their similarity. Clustering algorithms like K-means or hierarchical clustering can effectively partition documents into clusters by analyzing the similarity between their sparse vector representations.
+
+Dense BOW Vectors
+1. Semantic Similarity: Dense BOW vectors are valuable in tasks requiring the measurement of semantic similarity between words or documents. By capturing semantic relationships in a continuous vector space, dense representations enable more nuanced comparisons compared to sparse representations. Applications include semantic search, duplicate detection, and recommendation systems.
+
+2. Natural Language Understanding: Dense BOW vectors play a crucial role in natural language understanding tasks such as named entity recognition, part-of-speech tagging, and syntactic parsing. By embedding words into a continuous vector space, dense representations facilitate the extraction of meaningful linguistic features, enabling more accurate language understanding by machine learning models.
+
+3. Machine Translation: Dense BOW vectors are essential in machine translation systems where words and phrases need to be accurately translated between languages. By representing words in a continuous vector space, dense representations enable machine translation models to capture subtle semantic nuances and syntactic structures, leading to more accurate translations.
+
+#### Explore practical examples to illustrate Sparse and Dense BOW vectors
+Sparse BoW
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+documents = [
+    "This is the first document.",
+    "This document is the second document.",
+    "And this is the third one.",
+    "Is this the first document?"]
+    # The CountVectorizer is a tool in scikit-learn designed to transform a set of text documents into a matrix containing the counts of tokens.
+vectorizer = CountVectorizer()
+sparse_bow = vectorizer.fit_transform(documents)
+feature_names = vectorizer.get_feature_names()
+print(sparse_bow.toarray())
+print("Feature Names:", feature_names)
+```
+<p style="text-align: center;">
+  <img src="./images/sparse_bow.png" width="800" />
+</p>
+
+Dense BoW
+```python
+import gensim.downloader as api
+# This particular model contains word embeddings trained on a large Google News dataset.
+word_vectors = api.load("word2vec-google-news-300")
+words = ["king", "queen", "man", "woman"]
+dense_bow = [word_vectors[word] for word in words]
+print(dense_bow)
+```
+<p style="text-align: center;">
+  <img src="./images/dense_bow.png" width="800" />
+</p>
+The output consists of four lists, each representing a word from the input list ["king", "queen", "man", "woman"]. Each list contains a 300-dimensional dense vector representation of the corresponding word.
+
 ### Similarity Measures in Recommender Systems
 ### Calculate Course Similarity using BoW Features
 
