@@ -23,9 +23,8 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Introduction",
                                         "EDA",
                                         "User profile and course genres", 
                                         "Course similarity",
-                                        "Clustering"])
-
-
+                                        "Clustering",
+                                        'Personalized Recimmender'])
 
 ## INTRODUCTION
 tab1.subheader("A tab with a chart")
@@ -33,8 +32,6 @@ tab1.markdown('''
               ##### Overview project
               Overview
               ''')
-
-
 
 ## EDA
 tab2.subheader("Exploratory data Analysis")
@@ -72,4 +69,18 @@ tab5.markdown('''
               In this case you also need to upload the file with the enrollements.
 
               > Keep in ming that some users may not be in  the upload file.
+              ''')
+
+## CLUSTERING
+tab5.subheader('Personalized Recimmender')
+tab5.markdown('''
+              ##### Personalized Learning Recommender
+              Primero mostrar un data frame con todos los cursos, si es podible un buscador usando palbras clave.
+              Select the courses that you are enrollent or eudidedt, sellect the task:
+              - recomendart basado en los cusrsos
+              - basado en su perfil
+              - basado bajo su cluster - aplicar pca como opcion
+              - NN
+
+              Mostrar dataframe mosrtando las recomendaciones, y tener en cuenta qyue cada metodo tiene sus parametros
               ''')
